@@ -251,10 +251,7 @@ $$(document).on('page:init', '.page[data-name="fin"]', function (e) {
   $$("#puntuacionFinal2").html(nombreJugador2 + ": " + puntajeJ2)
   $$("#puntuacionFinal1").html(nombreJugador1 +" " + puntajeJ1)
   $$("#puntuacionFinal2").html(nombreJugador2 + " " + puntajeJ2)
-  $$('#opCancelar').on('click', fnTerminar())
+  $$('#opCancelar').on('click', function(){
+    app.views.main.router.navigate("/index/");
+  })
 })
-
-function fnTerminar(){
-
-  mainView =  app.views.main.router.navigate("/index/");
-}

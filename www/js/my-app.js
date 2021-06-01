@@ -78,18 +78,24 @@ $$(document).on('page:init', '.page[data-name="anotador"]', function (e) {
     var id = '';
 
     /*      EVENTOS     */
+    
+    /* 1A */
     $$('.btnIngresaValor').on('click', function(){
       id = $$(this).attr('id');
       idSoloNro = id.replace (/(j1-|j2-)/g, '');
       idSoloNro = parseInt(idSoloNro);
       if (idSoloNro>0 && idSoloNro<7) {
+        console.log(idSoloNro);
         fnMuestraMultiplos();
       }
-      if ($$(this).val() == '') {
-        $$('#avisoRepeticion').html("");
-      } else {
-        $$('#avisoRepeticion').html('Ya existe un puntaje ingresado');
-      }
+    })
+
+    /* 2A */
+    $$('.eligeAnotacion').on('click', function(){ 
+      var valorElegido = $$(this).val();
+      console.log(valorElegido);
+
+      fnGuardaValor(valorElegido);  
     })
 
     $$('.btnFinaliza').on('click', function(){
@@ -107,12 +113,6 @@ $$(document).on('page:init', '.page[data-name="anotador"]', function (e) {
       app.popup.close('.my-popup-fig', true);
       app.popup.close('.my-popup-nro', true);
       app.popup.close('.my-popup-finalizar',true);
-    })
-
-    $$('.eligeAnotacion').on('click', function(){ 
-      var valorElegido = $$(this).val();
-
-      fnGuardaValor(valorElegido);
     })
   
     /*      FUNCIONES     */
@@ -211,16 +211,17 @@ $$(document).on('page:init', '.page[data-name="anotador"]', function (e) {
     }
 
     function fnControlFinDeJuego(finDeJuego) {
-      if (finDeJuego) {
+      if (finDeJuego == false ) {
           console.log('FIN')
         puntajeJ1 = $$('#totalJ1').val();
         puntajeJ2 = $$('#totalJ2').val();
         if (puntajeJ1>puntajeJ2) {
           ganador = nombreJugador1;
+          console.log(ganador);
         } else {
           ganador = nombreJugador2;
         }
-        app.views.main.router.navigate("/fin/");
+        app.views.main.router.navigate("/anotador/");
       } else {
         console.log('NO FIN')
       }
@@ -247,10 +248,9 @@ $$(document).on('page:init', '.page[data-name="anotador"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="fin"]', function (e) {
   $$("#felicitaciones").html("¡¡Felicitaciones" + " "+ ganador + " has ganado!!");
-  $$("#puntuacionFinal1").html(nombreJugador1 +": " + puntajeJ1)
-  $$("#puntuacionFinal2").html(nombreJugador2 + ": " + puntajeJ2)
-  $$("#puntuacionFinal1").html(nombreJugador1 +" " + puntajeJ1)
-  $$("#puntuacionFinal2").html(nombreJugador2 + " " + puntajeJ2)
+  $$("#puntuacionFinal1").html(nombreJugador1 +": " + puntajeJ1);
+  $$("#puntuacionFinal2").html(nombreJugador2 + ": " + puntajeJ2);
+  
   $$('#opCancelar').on('click', function(){
     app.views.main.router.navigate("/index/");
   })

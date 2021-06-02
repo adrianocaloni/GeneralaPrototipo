@@ -49,19 +49,7 @@
                         <div class="title">Anotador de Generala</div>
                     </div>
                 </div>
-        
-                <!--
-                // Toolbar
-                <div class="toolbar toolbar-bottom">
-                    <div class="toolbar-inner">
-                        <button class="col button button-fill" id="eliminarJugador">Quitar</button>
-                        
-                        <button class="col button button-fill" id="añadirJugador">Añadir</button>
-                      
-                    </div>
-                </div>
-                -->
-
+    
                 <!-- Scrollable page content -->
                 <div class="page-content bg">
 
@@ -70,56 +58,71 @@
                         <div class="columna1">
                             <div class="list no-hairlines-md">
                                 <ul class="listaJugadores">
-                                 <li>
-                                    <a class="item-link smart-select smart-select-init" data-open-in="popover">
-                                <select name="superhero" id = "selector" multiple>
-                                    <option value="Batman" selected>DOS</option>
-                                    <option value="Superman">TRES</option>
-                                    <option value="Hulk">CUATRO</option>
-                                </select>
-                                    <div class="item-content">
-                                    <div class="item-inner">
-                                    <div class="item-title">Jugadores</div>
-                                    </div>
-                                    </div>
-                                </a>
-                                </li>
-
-                                  <li class="item-content item-input">
-                                    <div class="item-inner">
-                                      <div class="item-input-wrap">
-                                        <input type="text" id="jugador1" placeholder="Nombre jugador Uno" required>
-                                        <span class="input-clear-button"></span>
-                                      </div>
-                                    </div>
-                                  </li>
-
-                                  <br>
-
-                                  <li class="item-content item-input">
-                                    <div class="item-inner">
-                                      <div class="item-input-wrap">
-                                        <input type="text" id="jugador2" placeholder="Nombre jugador Dos" required>
-                                        <span class="input-clear-button"></span>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  
-                                  <br>
-
+                                    <li>
+                                        <a class="item-link smart-select smart-select-init" data-open-in="popover">
+                                        <div class="list">       
+                                            <a class="item-link smart-select smart-select-init">
+                                            <select id="cantJugadores" name="cantJugadores">
+                                                <option value="2" selected>Dos</option>
+                                                <option value="3">Tres</option>
+                                                <option value="4">Cuatro</option>
+                                            </select>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+                                                <div class="item-title">N° de Jugadores</div>
+                                                </div>
+                                            </div>
+                                            </a>                                    
+                                        </div>
+                                        </a>
+                                    </li>
                                 </ul>
-
-                                <button class="button button-large button-fill botonInicio" id="iniciar">Iniciar</button>
                             </div>
+
+                            <div class="block-title"></div>
+
+                            <div class="list no-hairlines-md">
+                                <ul>
+                                    <li><div class="item-inner margin-left">Jugadores</div> </li>
+                                    <li class="item-content item-input item-input-with-info">
+                                        <div class="item-input-wrap">
+                                            <input type="text" id="jugador1" placeholder="Nombre jugador 1" required validate />
+                                            <span class="input-clear-button"></span>
+                                            <div class="item-input-info">Campo requerido</div>
+                                        </div>
+                                    </li>    
+                                    <li class="item-content item-input item-input-with-info">
+                                        <div class="item-input-wrap">
+                                            <input type="text" id="jugador2" placeholder="Nombre jugador 2" required validate />
+                                            <span class="input-clear-button"></span>
+                                            <div class="item-input-info">Campo requerido</div>
+                                        </div>
+                                    </li>    
+                                    <li class="item-content item-input item-input-with-info">
+                                        <div class="item-input-wrap hidden" id="inputNombre3">
+                                            <input type="text" id="jugador3" placeholder="Nombre jugador 3" required validate />
+                                            <span class="input-clear-button"></span>
+                                            <div class="item-input-info">Campo requerido</div>
+                                        </div>
+                                    </li>    
+                                    <li class="item-content item-input item-input-with-info">
+                                        <div class="item-input-wrap hidden" id="inputNombre4">
+                                            <input type="text" id="jugador4" placeholder="Nombre jugador 4" required validate />
+                                            <span class="input-clear-button"></span>
+                                            <div class="item-input-info">Campo requerido</div>
+                                        </div>
+                                    </li>    
+                                </ul>
+                            </div>
+                            <br><br>
+                            <button class="button button-large button-fill botonInicio" id="iniciar">Iniciar</button>
                         </div>
                     </div>
-                       
-                </div>
-
-
+                </div>       
             </div>
         </div>
     </div>
+    
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>

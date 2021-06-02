@@ -38,9 +38,13 @@ var mainView = app.views.create('.view-main');
 /*      VARIABLES GLOBALES      */
 var nombreJugador1 = '';
 var nombreJugador2 = '';
+var nombreJugador3 = '';
+var nombreJugador4 = '';
 var ganador = '';
 var puntajeJ1 = 0;
 var puntajeJ2 = 0;
+var puntajeJ3 = 0;
+var puntajeJ4 = 0;
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
@@ -51,16 +55,33 @@ $$(document).on('deviceready', function() {
 $$(document).on('page:init', function (e) {
     $$('#jugador1').val('');
     $$('#jugador2').val('');
+    $$('#jugador3').val('');
+    $$('#jugador4').val('');
 })
 
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
     nombreJugador1 = '';
     nombreJugador2 = '';
+    nombreJugador3 = '';
+    nombreJugador4 = '';
+
+    //fnMostrarMasJugadores(); (Para revisar, no borrar)
 
     $$('#iniciar').on('click', function(){
       nombreJugador1 = $$('#jugador1').val();
       nombreJugador2 = $$('#jugador2').val();
-      app.views.main.router.navigate("/anotador/");
+      nombreJugador3 = $$('#jugador3').val();
+      nombreJugador4 = $$('#jugador4').val();
+      if ($$('#cantJugadores').val() == 2 && nombreJugador1 != '' && nombreJugador2 != '') {
+        app.views.main.router.navigate("/anotador/");
+      }
+      if ($$('#cantJugadores').val() == 3 && nombreJugador1 != '' && nombreJugador2 != '' && nombreJugador3 != '') {
+        app.views.main.router.navigate("/anotador/");
+      }
+      if ($$('#cantJugadores').val() == 4 && nombreJugador1 != '' && nombreJugador2 != '' && nombreJugador3 != '' && nombreJugador4 != '') {
+        app.views.main.router.navigate("/anotador/");
+      }
+      
     })
 
     $$('#finProvisorio').on('click', function(){
@@ -72,6 +93,8 @@ $$(document).on('page:init', '.page[data-name="anotador"]', function (e) {
     console.log(e);
     $$('#jug1').val(nombreJugador1);
     $$('#jug2').val(nombreJugador2);
+    $$('#jug3').val(nombreJugador3);
+    $$('#jug4').val(nombreJugador4);
 
     /*      VARIABLES     */
     var idSoloNro = '';
@@ -82,7 +105,7 @@ $$(document).on('page:init', '.page[data-name="anotador"]', function (e) {
     /* 1A */
     $$('.btnIngresaValor').on('click', function(){
       id = $$(this).attr('id');
-      idSoloNro = id.replace (/(j1-|j2-)/g, '');
+      idSoloNro = id.replace (/(j1-|j2-|j3-|j4-)/g, '');
       idSoloNro = parseInt(idSoloNro);
       if (idSoloNro>0 && idSoloNro<7) {
         console.log(idSoloNro);
@@ -116,6 +139,25 @@ $$(document).on('page:init', '.page[data-name="anotador"]', function (e) {
     })
   
     /*      FUNCIONES     */
+    
+    /* (Para revisar!)
+    function fnMostrarMasJugadores() {
+      if ($$('#cantJugadores').val() == 3) {
+        $$('#inputNombre3').removeClass('hidden').addClass('visible');
+        $$('#colPuntosJ3').removeClass('hidden').addClass('visible');
+        $$('#puntuacionFinal3').removeClass('hidden').addClass('visible');
+      }
+      if ($$('#cantJugadores').val() == 4) {
+        $$('#inputNombre3').removeClass('hidden').addClass('visible');
+        $$('#inputNombre4').removeClass('hidden').addClass('visible');
+        $$('#colPuntosJ3').removeClass('hidden').addClass('visible');
+        $$('#colPuntosJ4').removeClass('hidden').addClass('visible');
+        $$('#puntuacionFinal3').removeClass('hidden').addClass('visible');
+        $$('#puntuacionFinal4').removeClass('hidden').addClass('visible');
+      }
+    }*/ 
+    
+
     function fnMuestraMultiplos() {
       $$('#op1Dado').val(idSoloNro*1);
       $$('#op2Dado').val(idSoloNro*2);
@@ -215,11 +257,23 @@ $$(document).on('page:init', '.page[data-name="anotador"]', function (e) {
           console.log('FIN')
         puntajeJ1 = $$('#totalJ1').val();
         puntajeJ2 = $$('#totalJ2').val();
-        if (puntajeJ1>puntajeJ2) {
+        puntajeJ3 = $$('#totalJ3').val();
+        puntajeJ4 = $$('#totalJ4').val();
+        if (puntajeJ1>puntajeJ2 && puntajeJ1>puntajeJ3 && puntajeJ1>puntajeJ4) {
           ganador = nombreJugador1;
           console.log(ganador);
-        } else {
-          ganador = nombreJugador2;
+        }
+        if (puntajeJ2>puntajeJ1 && puntajeJ2>puntajeJ3 && puntajeJ2>puntajeJ4) {
+          ganador = nombreJugador1;
+          console.log(ganador);
+        }
+        if (puntajeJ3>puntajeJ1 && puntajeJ3>puntajeJ2 && puntajeJ3>puntajeJ4) {
+          ganador = nombreJugador1;
+          console.log(ganador);
+        }
+        if (puntajeJ4>puntajeJ1 && puntajeJ4>puntajeJ2 && puntajeJ4>puntajeJ3) {
+          ganador = nombreJugador1;
+          console.log(ganador);
         }
         app.views.main.router.navigate("/anotador/");
       } else {
@@ -236,6 +290,8 @@ $$(document).on('page:init', '.page[data-name="anotador"]', function (e) {
       }
       $$('#totalJ1').val("0");
       $$('#totalJ2').val("0"); 
+      $$('#totalJ3').val("0"); 
+      $$('#totalJ4').val("0"); 
       app.popup.close('.my-popup-finalizar', true);
     }
 
@@ -250,6 +306,8 @@ $$(document).on('page:init', '.page[data-name="fin"]', function (e) {
   $$("#felicitaciones").html("¡¡Felicitaciones" + " "+ ganador + " has ganado!!");
   $$("#puntuacionFinal1").html(nombreJugador1 +": " + puntajeJ1);
   $$("#puntuacionFinal2").html(nombreJugador2 + ": " + puntajeJ2);
+  $$("#puntuacionFinal3").html(nombreJugador2 + ": " + puntajeJ3);
+  $$("#puntuacionFinal4").html(nombreJugador2 + ": " + puntajeJ4);
   
   $$('#opCancelar').on('click', function(){
     app.views.main.router.navigate("/index/");

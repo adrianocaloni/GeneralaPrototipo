@@ -202,6 +202,20 @@
   font-weight: 500 !important;
 }
 
+.jugador3 {
+  margin-top: 11px !important;
+  font-size: 21px !important;
+  margin-left: 20px !important;
+  font-weight: 500 !important;
+}
+
+.jugador4 {
+  margin-top: 11px !important;
+  font-size: 21px !important;
+  margin-left: 20px !important;
+  font-weight: 500 !important;
+}
+
 .btj1 {
   margin-top: 10px;
   background-color: #b73a3a;
@@ -230,6 +244,38 @@
 }
 
 .colJug2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.btj3 {
+  margin-top: 10px;
+  background-color: #b73a3a;
+  color:white;
+  margin-top: 10px;
+
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+}
+
+.colJug3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.btj4 {
+  margin-top: 10px;
+  background-color: #b73a3a;
+  color:white;
+  margin-top: 10px;
+
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+}
+
+.colJug4 {
   display: flex;
   flex-direction: column;
 }
@@ -264,7 +310,9 @@
 }
 
 #totalJ1,
-#totalJ2 {
+#totalJ2,
+#totalJ3,
+#totalJ4 {
   margin-top: 11px !important;
   font-size: 21px !important;
   margin-left: 2px !important;
@@ -306,12 +354,19 @@
   display: none;
 }
 
+.visible {
+  display: block;
+  visibility: visible;
+}
+
 .popUpOpciones {
   margin-top: 10%;
 }
 
 #puntuacionFinal1,
-#puntuacionFinal2 {
+#puntuacionFinal2,
+#puntuacionFinal3,
+#puntuacionFinal4 {
   color: #b73a3a !important;
   text-align: center;
   font-size: 25px;

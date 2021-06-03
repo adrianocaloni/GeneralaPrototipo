@@ -36,12 +36,12 @@
     <div id="app">
         <!-- Statusbar overlay -->
         <div class="statusbar"></div>
-    
+
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <!-- Initial Page, "data-name" contains page name -->
             <div data-name="index" class="page">
-    
+
                 <!-- Top Navbar -->
                 <div class="navbar">
                     <div class="navbar-bg"></div>
@@ -49,7 +49,7 @@
                         <div class="title">Anotador de Generala</div>
                     </div>
                 </div>
-    
+
                 <!-- Scrollable page content -->
                 <div class="page-content bg">
 
@@ -60,7 +60,7 @@
                                 <ul class="listaJugadores">
                                     <li>
                                         <a class="item-link smart-select smart-select-init" data-open-in="popover">
-                                        <div class="list">       
+                                        <div class="list">
                                             <a class="item-link smart-select smart-select-init">
                                             <select id="cantJugadores" name="cantJugadores">
                                                 <option value="2" selected>Dos</option>
@@ -72,7 +72,7 @@
                                                 <div class="item-title">N° de Jugadores</div>
                                                 </div>
                                             </div>
-                                            </a>                                    
+                                            </a>
                                         </div>
                                         </a>
                                     </li>
@@ -81,48 +81,51 @@
 
                             <div class="block-title"></div>
 
-                            <div class="list no-hairlines-md">
-                                <ul>
-                                    <li><div class="item-inner margin-left">Jugadores</div> </li>
-                                    <li class="item-content item-input item-input-with-info">
-                                        <div class="item-input-wrap">
-                                            <input type="text" id="jugador1" placeholder="Nombre jugador 1" required validate />
-                                            <span class="input-clear-button"></span>
-                                            <div class="item-input-info">Campo requerido</div>
-                                        </div>
-                                    </li>    
-                                    <li class="item-content item-input item-input-with-info">
-                                        <div class="item-input-wrap">
-                                            <input type="text" id="jugador2" placeholder="Nombre jugador 2" required validate />
-                                            <span class="input-clear-button"></span>
-                                            <div class="item-input-info">Campo requerido</div>
-                                        </div>
-                                    </li>    
-                                    <li class="item-content item-input item-input-with-info">
-                                        <div class="item-input-wrap hidden" id="inputNombre3">
-                                            <input type="text" id="jugador3" placeholder="Nombre jugador 3" required validate />
-                                            <span class="input-clear-button"></span>
-                                            <div class="item-input-info">Campo requerido</div>
-                                        </div>
-                                    </li>    
-                                    <li class="item-content item-input item-input-with-info">
-                                        <div class="item-input-wrap hidden" id="inputNombre4">
-                                            <input type="text" id="jugador4" placeholder="Nombre jugador 4" required validate />
-                                            <span class="input-clear-button"></span>
-                                            <div class="item-input-info">Campo requerido</div>
-                                        </div>
-                                    </li>    
-                                </ul>
-                            </div>
+                                <div class="list no-hairlines-md">
+                                    <ul>
+                                        <li>
+                                          <div class="item-inner margin-left">Jugadores</div>
+                                        </li>
+                                        <br>
+                                        <li class="item-content item-input item-input-with-info">
+                                            <div class="item-input-wrap">
+                                                <input type="text" id="jugador1" placeholder="Nombre jugador 1" maxlength="8" required validate/>
+                                                <span class="input-clear-button"></span>
+                                                <div class="item-input-info">Campo requerido</div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content item-input item-input-with-info">
+                                            <div class="item-input-wrap">
+                                                <input type="text" id="jugador2" placeholder="Nombre jugador 2" maxlength="8" required validate/>
+                                                <span class="input-clear-button"></span>
+                                                <div class="item-input-info">Campo requerido</div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content item-input item-input-with-info">
+                                            <div class="item-input-wrap hidden" id="inputNombre3">
+                                                <input type="text" id="jugador3" placeholder="Nombre jugador 3" maxlength="8" required validate />
+                                                <span class="input-clear-button"></span>
+                                                <div class="item-input-info">Campo requerido</div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content item-input item-input-with-info">
+                                            <div class="item-input-wrap hidden" id="inputNombre4">
+                                                <input type="text" id="jugador4" placeholder="Nombre jugador 4" maxlength="8" required validate />
+                                                <span class="input-clear-button"></span>
+                                                <div class="item-input-info">Campo requerido</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             <br><br>
                             <button class="button button-large button-fill botonInicio" id="iniciar">Iniciar</button>
                         </div>
                     </div>
-                </div>       
+                </div>
             </div>
         </div>
     </div>
-    
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>

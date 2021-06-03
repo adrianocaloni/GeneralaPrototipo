@@ -17,28 +17,27 @@
         <div class="block ">
             <div class="block grid-resizable-demo" style="min-width: 20%">
                 <div class="row no-gap">
-                
-                    <div class="col resizable">
-                        <div class="puntajes">      
-                            <p class="punt">UNO</p>
-                            <p class="punt">DOS</p>
-                            <p class="punt">TRES</p>
-                            <p class="punt">CUATRO</p>
-                            <p class="punt">CINCO</p>
-                            <p class="punt">SEIS</p>
-                            <p class="punt">ESCALERA</p>
-                            <p class="punt">FULL</p>
-                            <p class="punt">POKER</p>
-                            <p class="punt">GENERALA</p>
-                            <p class="punt">DOBLE GEN.</p>
+
+                    <div class="col-20">
+                        <div class="puntajes">
+                            <p class="punt">1</p>
+                            <p class="punt">2</p>
+                            <p class="punt">3</p>
+                            <p class="punt">4</p>
+                            <p class="punt">5</p>
+                            <p class="punt">6</p>
+                            <p class="punt">E</p>
+                            <p class="punt">F</p>
+                            <p class="punt">P</p>
+                            <p class="punt">G</p>
+                            <p class="punt">GD</p>
                             <p class="punt">TOTAL</p>
                         </div>
-                        <span class="resize-handler"></span>
                     </div>
 
-                    <div class="col resizable" style="min-width: 20px">
+                    <div class="col-40" style="min-width: 20px">
                         <div>
-                        <input type="text" name="jug1" id="jug1" class="jugador1">
+                        <input type="text" name="jug1" id="jug1" class="jugador1" readonly>
                         </div>
 
                         <div class="col resizable colJug1" style="min-width: 20px">
@@ -58,12 +57,11 @@
                                 <input type="text" name="totalJ1" id="totalJ1" value="0">
                             </div>
                         </div>
-                        <span class="resize-handler"></span>
                     </div>
 
-                    <div class="col resizable" style="min-width: 20px">
+                    <div class="col-40" style="min-width: 20px">
                         <div>
-                            <input type="text" name="jug2" id="jug2" class="jugador2">
+                            <input type="text" name="jug2" id="jug2" class="jugador2" readonly>
 
                             <div class="colJug2">
                                 <input type="button" id="j2-1" value="" data-popup=".my-popup-nro" class="popup-open btnIngresaValor btj2">
@@ -83,13 +81,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <span class="resize-handler"></span>
                     </div>
 
-                    <div class="col resizable hidden" style="min-width: 20px" id="colPuntosJ3">
+                    <div class="col hidden" style="min-width: 20px" id="colPuntosJ3">
                         <div>
-                            <input type="text" name="jug3" id="jug3" class="jugador3">
+                            <input type="text" name="jug3" id="jug3" class="jugador3" readonly>
 
                             <div class="colJug3">
                                 <input type="button" id="j3-1" value="" data-popup=".my-popup-nro" class="popup-open btnIngresaValor btj3">
@@ -108,13 +104,12 @@
                                     <input type="text" name="totalJ3" id="totalJ3" value="0">
                                 </div>
                             </div>
-                        </div>4
-                        <span class="resize-handler"></span>
+                        </div>
                     </div>
 
-                    <div class="col resizable hidden" style="min-width: 20px" id="colPuntosJ4">
+                    <div class="col hidden" style="min-width: 20px" id="colPuntosJ4">
                         <div>
-                            <input type="text" name="jug4" id="jug4" class="jugador4">
+                            <input type="text" name="jug4" id="jug4" class="jugador4" readonly>
 
                             <div class="colJug4">
                                 <input type="button" id="j4-1" value="" data-popup=".my-popup-nro" class="popup-open btnIngresaValor btj4">
@@ -134,8 +129,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <span class="resize-handler"></span>
                     </div>
 
                 </div>
@@ -144,7 +137,7 @@
             <div>
                 <input type="button" value="Finalizar" data-popup=".my-popup-finalizar" class="popup-open btnLimpiaTermina button button-large button-fill botonInicio">
             </div>
-                        
+
             <div class="popup my-popup-nro">
                 <div class="view">
                     <div class="page">
@@ -164,6 +157,7 @@
                           <input type="button" value="" id="op4Dado" class="eligeAnotacion btnFinaliza button button-large button-fill">
                           <input type="button" value="" id="op5Dado" class="eligeAnotacion btnFinaliza button button-large button-fill">
                           <input type="button" value="Tachar" id="opTachar" class="eligeAnotacion btnFinaliza button button-large button-fill">
+                          <input type="button" value="Borrar" id="opBorrar" class="eligeAnotacion btnFinaliza button button-large button-fill">
                           <input type="button" value="Cancelar" id="opCancelar" class="eligeAnotacion2 cancela btnFinaliza button button-large button-fill">
                         <h1 id="avisoRepeticion"></h1>
                         </div>
@@ -189,6 +183,7 @@
                             <input type="button" value="Servida" id="opServida" class="eligeAnotacion  button button-large">
                             <input type="button" value="No servida" id="opNoServida" class="eligeAnotacion  button button-large">
                             <input type="button" value="Tachar" id="opTachar" class="eligeAnotacion  button button-large">
+                            <input type="button" value="Borrar" id="opBorrar" class="eligeAnotacion btnFinaliza button button-large button-fill">
                             <input type="button" value="Cancelar" id="opCancelar" class="eligeAnotacion2 cancela  button button-large">
                             <div class="hidden">
                                 <h1 id="avisoRepeticion"></h1>
@@ -211,7 +206,7 @@
                         <div class="page-content">
                             <input type="button" value="Limpiar" id="opLimpia" class="eligeAnotacion2 btnFinaliza button button-large button-fill  popupFin">
                             <input type="button" value="Terminar" id="opTermina" class="eligeAnotacion2 btnFinaliza button button-large button-fill popupFin">
-                           
+
                         </div>
                     </div>
                 </div>
